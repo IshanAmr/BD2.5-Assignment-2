@@ -200,13 +200,13 @@ app.get('/stocks', (req, res)=> {
 
 app.get('/stocks/filter/exchange', (req, res)=> {
       let exchange = req.query.exchange;
-      let filteredStocks = stocks.filter(ele=>ele.toLowerCase()===exchange.toLowerCase());
+      let filteredStocks = stocks.filter(ele=>ele.exchange.toLowerCase()===exchange);
       res.json({ stocks: filteredStocks });
 })
 
 app.get('/stocks/filter/industry', (req, res)=> {
      let industry = req.query.industry;
-     let filteredStocks = stocks.filter(ele=>ele.industry.toLowerCase() === industry.toLowerCase());
+     let filteredStocks = stocks.filter(ele=>ele.industry.toLowerCase() === industry);
      res.json({ stocks: filteredStocks });
 })
 
